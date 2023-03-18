@@ -1,0 +1,226 @@
+/*!===================== {CSS RESET} ===================== */
+
+* {
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* color: white; */
+  /* border: 1px solid red; */
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #d3d3d3;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--bgColor);
+  border-radius: 10px;
+}
+
+:root {
+  --bgColor: rgb(76, 130, 239);
+  --fontColorLight: white;
+}
+
+/*!===================== {CSS STYLING} ===================== */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-up.runFadeUp {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body {
+  background-color: #f9f9f9;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  background-color: var(--bgColor);
+  width: 100%;
+  color: var(--fontColorLight);
+  padding: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+header a {
+  display: inline-block;
+}
+
+header a:first-child {
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+header a button {
+  background-color: white;
+  color: var(--bgColor);
+}
+
+main {
+  width: 100%;
+  padding: 50px;
+  margin-top: 50px;
+}
+
+button {
+  background-color: var(--bgColor);
+  border: none;
+  font-weight: 600;
+  padding: 5px;
+  width: 170px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+
+button:hover {
+  scale: 1.02;
+}
+
+.product-card {
+  background-color: var(--bgColor);
+  height: 170px;
+  margin-top: 50px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 20px 25px -12px #00000029;
+  background-color: #f8faff;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+}
+
+.product-card h3 {
+  border-left: 5px solid var(--bgColor);
+  text-align: center;
+  width: 100%;
+  padding: 5px;
+}
+
+.product-card h3:first-child {
+  border-left: none;
+}
+
+.product-card h3 span {
+  font-weight: normal;
+}
+
+.product-card .row:last-child {
+  margin-top: 20px;
+  align-self: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--fontColorLight);
+}
+
+.btn-wrapper button {
+  width: 100px;
+}
+
+.btn-wrapper a:last-child button {
+  background-color: red;
+}
+
+.add-container,
+.edit-container {
+  z-index: 3;
+  width: 700px;
+  background-color: #f9f9f9;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 700px;
+  border-radius: 20px;
+  transform: translate(-50%, -170%);
+  box-shadow: 1px 1px 38px -7px rgba(0, 0, 0, 0.35);
+  overflow: auto;
+}
+
+.add-container.active,
+.edit-container.active {
+  transition: all 0.5s ease-in-out;
+  transform: translate(-50%, -50%);
+}
+
+.bg-dark {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 3;
+  height: 0;
+}
+
+.bg-dark.active {
+  height: 100vh;
+}
+
+.form-wrapper form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form-wrapper form input {
+  border: none;
+  border-bottom: 1px solid gray;
+  height: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.form-wrapper form input:focus {
+  outline: none;
+}
+
+.confirm-wrapper {
+  background-color: white;
+  width: 400px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  border-radius: 10px;
+  box-shadow: 0 20px 25px -12px #00000029;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, -1000px);
+  transition: 0.5s ease-in-out;
+  z-index: 5;
+}
+
+.confirm-wrapper.show {
+  transform: translate(-50%, 0);
+}
